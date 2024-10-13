@@ -2,11 +2,13 @@
 
 Neovim [Gren](https://gren-lang.org/) support
 
+## Requirements
+
+- [tree-sitter-gren](https://github.com/MaeBrooks/tree-sitter-gren/blob/main/editors/nvim/README.md)
+
 ## NOTE
 
-All this does is configure Neovim to automatically detect `.gren` files
-
-If you want syntax highlighting, please refer to the [tree-sitter-gren](https://github.com/MaeBrooks/tree-sitter-gren/blob/main/editors/nvim/README.md) Neovim setup
+All this does is configure Neovim to automatically detect `.gren` files and setup [tree-sitter-gren](https://github.com/MaeBrooks/tree-sitter-gren/blob/main/editors/nvim/README.md) to automatically install gren
 
 ## Setup
 
@@ -21,5 +23,8 @@ gren.setup()
 ### 'Lazy' package manager example config
 
 ```lua
-{ "Maebrooks/nvim-gren" }
+{
+    "Maebrooks/nvim-gren",
+    dependencies = { "nvim-treesitter/nvim-treesitter" }
+}
 ```
