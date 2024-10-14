@@ -48,14 +48,18 @@ vim.cmd.autocmd "BufWritePost *.gren :GrenFormat"
 
 ### Package
 
-| Field           | Description                                             |
-| --------------- | ------------------------------------------------------- |
-| `setup(opts?)`  | Takes a single argument of `opts`                       |
-| `format_file()` | writes and formats the current file using `gren format` |
+| Field              | Description                                             |
+| ------------------ | ------------------------------------------------------- |
+| `setup(opts?)`     | Takes a single argument of `opts`                       |
+| `format_file()`    | writes and formats the current file using `gren format` |
+| `make_file(file?)` | runs `gren make <file=%>` - IS NOT SILENT               |
+| `make_file_silent(file?)` | runs `gren make <file=%>` - IS SILENT            |
 
 
 ## Commands
 
-| Command       | Action                                                         |
-| ------------- | -------------------------------------------------------------- |
-| `:GrenFormat` | `format_file()` - writes and formats the current file using `gren format` |
+| Command       | Action                                                                                    |
+| ------------- | ----------------------------------------------------------------------------------------- |
+| `:GrenFormat` | `format_file()` - writes and formats the current file using `gren format`                 |
+| `:GrenMake`   | `make_file(file)` - runs `gren make <file=%>` where `file` is the first optional argument |
+
