@@ -1,6 +1,6 @@
 local M = {}
 
-local FORMAT_FILE_CMD = ':!gren format --yes "%"'
+local FORMAT_FILE_CMD = ':silent exec \'!gren format --yes "%"\''
 local FILE_PATTERN = "*.gren"
 
 -- @class gren.Options
