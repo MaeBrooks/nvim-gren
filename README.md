@@ -25,6 +25,14 @@ gren.setup()
 }
 ```
 
+## Auto Formatting
+
+Simply add this to automatically format your current gren file after each write
+
+```lua
+vim.cmd.autocmd "BufWritePost *.gren :GrenFormat"
+```
+
 ## Configuration
 
 `gren.setup()` takes a single optional argument of `opts`
