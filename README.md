@@ -6,10 +6,6 @@ Neovim [Gren](https://gren-lang.org/) support
 
 - [tree-sitter-gren](https://github.com/MaeBrooks/tree-sitter-gren/blob/main/editors/nvim/README.md)
 
-## NOTE
-
-All this does is configure Neovim to automatically detect `.gren` files and setup [tree-sitter-gren](https://github.com/MaeBrooks/tree-sitter-gren/blob/main/editors/nvim/README.md) to automatically install gren
-
 ## Setup
 
 Simply add using your favourite package manager and call `setup()`
@@ -25,6 +21,33 @@ gren.setup()
 ```lua
 {
     "Maebrooks/nvim-gren",
-    dependencies = { "nvim-treesitter/nvim-treesitter" }
+    dependencies = { "nvim-treesitter/nvim-treesitter" },
 }
 ```
+
+## Configuration
+
+`gren.setup()` takes a single optional argument of `opts`
+
+```lua
+{
+  -- Automatically ensures that the `gren` tree sitter parser is installed using
+  -- require("nvim-treesitter.install").ensure_installed("gren")
+  -- defaults to true
+  use_treesitter = true,
+}
+```
+
+### Package
+
+| Field           | Description                                             |
+| --------------- | ------------------------------------------------------- |
+| `setup(opts?)`  | Takes a single argument of `opts`                       |
+| `format_file()` | writes and formats the current file using `gren format` |
+
+
+## Commands
+
+| Command       | Action                                                         |
+| ------------- | -------------------------------------------------------------- |
+| `:GrenFormat` | `format_file()` - writes and formats the current file using `gren format` |
